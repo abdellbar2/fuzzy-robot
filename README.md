@@ -4,6 +4,7 @@ This repository contains two example Python scripts that demonstrate how to impl
 
 * **Plan A**: Unlimited streaming for a flat monthly fee.
 * **Plan B**: Metered streaming plan — includes 100 GB per month with overage charges.
+* **Plan C**: Metered streaming planB with applyed coupon logic.
 
 > ⚠️ **Important:** These scripts are intended **for educational and sandbox testing purposes only**. Do not use them in production without implementing proper security, error handling, and input validation.
 
@@ -15,6 +16,7 @@ This repository contains two example Python scripts that demonstrate how to impl
 | ----------------------------- | ------------------------------------------------------------------------------------------ |
 | `plan_a_flat_subscription.py` | Flat-rate monthly billing example using Stripe Subscriptions.                              |
 | `plan_b_metered_billing.py`   | Usage-based metered billing example using Stripe Metering API and graduated pricing tiers. |
+| `plan_b_metered_coupon.py`    | Usage-based metered billing example with applyed coupon logic using Stripe coupon API      |
 
 ---
 
@@ -67,6 +69,11 @@ This repository contains two example Python scripts that demonstrate how to impl
    python plan_b_metered_billing.py
    ```
 
+   For metered billing (Plan B):
+
+   ```bash
+   python plan_b_metered_coupon.py
+   ```
 ---
 
 ## 💡 Overview of Plans
@@ -84,6 +91,16 @@ This repository contains two example Python scripts that demonstrate how to impl
 * Uses `stripe.billing.Meter` and `stripe.billing.MeterEvent` 
 * Demonstrates tiered usage pricing and usage event reporting
 
+### 🟡 Plan C: Metered Usage Subscription with coupon logic
+
+* Base price: **\$10.99/month** for the first 100 GB
+* Overage charge: **\$1.00 per 10 GB** beyond 100 GB
+* Coupon applied for 1st 2months of use, and limited to teh first 10 signups
+* Uses `stripe.Coupon` 
+* Demonstrates usage of coupon API on subscription objects
+* screenshot from dahsbord of how the 2nd billing scyle would look like the folwing :
+![Dashbord screenshot](dashbord_screenshot.png)
+  
 ---
 
 ## ⚠️ Disclaimers
