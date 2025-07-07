@@ -6,7 +6,9 @@ This repository contains two example Python scripts that demonstrate how to impl
 * **Plan B**: Metered streaming plan — includes 100 GB per month with overage charges.
 * **Plan C**: Metered streaming planB with applyed coupon logic.
 
-> ⚠️ **Important:** These scripts are intended **for educational and sandbox testing purposes only**. Do not use them in production without implementing proper security, error handling, and input validation.
+  example screenshot of what you can see on the Stripe dahsbord runing the coupon logic script:
+  
+  ![Dashbord screenshot](dashbord_screenshot.png)
 
 ---
 
@@ -99,7 +101,7 @@ This repository contains two example Python scripts that demonstrate how to impl
 * Uses `stripe.Coupon` 
 * Demonstrates usage of coupon API on subscription objects
 * screenshot from dahsbord of how the 2nd billing scyle would look like the folwing :
-![Dashbord screenshot](dashbord_screenshot.png)
+
   
 ---
 
