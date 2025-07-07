@@ -54,6 +54,9 @@ flat_price = stripe.Price.create(
 meter = stripe.billing.Meter.create(
     display_name="Streaming GB Usage",  # Friendly name for dashboard
     event_name="streaming_per_gb",      # Usage events must match this name
+    #be aware this should be unique name in your account, you can use it to track difrent usage of 
+    #difrent services in your streaming service ( HD VS FullHD ) and set difrent pricing for each
+    
     default_aggregation={"formula": "sum"},  # Aggregate all events via summation
     customer_mapping={
         "event_payload_key": "stripe_customer_id",  # Map usage events to customer by ID
